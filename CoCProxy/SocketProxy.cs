@@ -57,8 +57,8 @@ using System.Threading.Tasks;
         /// <summary>
         /// Create New Instance of Proxy
         /// </summary>
-        /// <param name="HostEP"></param>
-        /// <param name="ProxyEP"></param>
+        /// <param name="HostEP">The server IP Address</param>
+        /// <param name="ProxyEP">Proxy endpoint</param>
         /// <param name="HostProtoType"></param>
         /// <param name="ProxyProtoType"></param>
         public SocketProxy(IPEndPoint HostEP, IPEndPoint ProxyEP, ProtocolType HostProtoType, ProtocolType ProxyProtoType, SocketType sockettype = SocketType.Stream)
@@ -223,7 +223,7 @@ using System.Threading.Tasks;
 
         public delegate void ClientConnected(object sender, ProxyClient client);
         public delegate void AsyncWithClient(object sender, Socket socket);
-        public delegate void Send(object sender, ProxyClient clinet, byte[] buffer, int length);
+        public delegate void Send(object sender, ProxyClient client, byte[] buffer, int length);
         public delegate void Receive(object sender, ProxyClient client, byte[] buffer, int length);
 
         public event ClientConnected OnClientConnected;
